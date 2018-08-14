@@ -50,10 +50,14 @@ if [ ! -f "/suda-app/app/manifast.json" ];then
   echo 'no app avaiable'
   exec "$@"
 else
-  # init database password
-  mkdir -p /suda-app/runtime-data/runtime
-  chmod a+rw -R /suda-app/runtime-data/runtime
-  echo '<?php return ["passwd" => ""]; ' > /suda-app/runtime-data/runtime/database.config.php
+
+  if [ "$LOCAL_DATABASE" = 'On' ]; then
+    # init database password
+    mkdir -p /suda-app/runtime-data/runtime
+    chmod a+rw -R /suda-app/runtime-data/runtime
+    echo '<?php return ["passwd" => "","host"=>"127.0.0.1"]; ' > /suda-app/runtime-data/runtime/database.config.php
+  fi
+
   mkdir -p /suda-app/runtime-data/logs/
   touch /suda-app/runtime-data/logs/latest.log
 
