@@ -34,4 +34,5 @@ options:
 
 ## 注意
 
-**Suda Package包为zip压缩包，压缩的内容为 app/ 目录下的文件，不必包含data不必要的文件**
+**Suda Package包为zip压缩包，压缩的内容为 app/ 目录下的文件**
+

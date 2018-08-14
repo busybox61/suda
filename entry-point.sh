@@ -52,7 +52,7 @@ if [ ! -f "/suda-app/app/manifast.json" ];then
 else
 
   if [ "$LOCAL_DATABASE" = 'On' ]; then
-    # init database password
+    echo 'init database host and password'
     mkdir -p /suda-app/runtime-data/runtime
     chmod a+rw -R /suda-app/runtime-data/runtime
     echo '<?php return ["passwd" => "","host"=>"127.0.0.1"]; ' > /suda-app/runtime-data/runtime/database.config.php

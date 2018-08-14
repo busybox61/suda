@@ -1,12 +1,12 @@
 FROM centos:centos7
-MAINTAINER DXkite dxkite(at)gmail
+MAINTAINER DXkite dxkite(at)qq.com
 
 RUN yum install -y wget git unzip net-tools
 
 RUN mkdir /suda-app
 WORKDIR /suda-app
 
-RUN wget -O /suda-app/xampp-installer.run "https://downloadsapachefriends.global.ssl.fastly.net/xampp-files/7.2.5/xampp-linux-x64-7.2.5-0-installer.run?from_af=true"
+RUN wget -O /suda-app/xampp-installer.run "https://www.apachefriends.org/xampp-files/7.2.8/xampp-linux-x64-7.2.8-0-installer.run"
 RUN chmod +x xampp-installer.run
 RUN bash -c ./xampp-installer.run
 RUN ln -sf /opt/lampp/lampp /usr/bin/lampp
