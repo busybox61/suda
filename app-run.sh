@@ -16,7 +16,7 @@ BRANCH='dev'
 
 function print_usage() {
     echo 'Usage:'
-    echo '  run-app.sh [options] app-path'
+    echo '  app-run.sh [options] app-path'
     echo '  options:'
     echo '    --init         clear data and init app'
     echo '    --upgrade      upgrade suda system'
@@ -34,7 +34,7 @@ then
   exit 0
 fi
 
-ARGS=`getopt -o p:d: --long init,restart,upgrade,database,master,port:,data:,public: -n 'run-app.sh' -- "$@"`
+ARGS=`getopt -o p:d: --long init,restart,upgrade,database,master,port:,data:,public: -n 'app-run.sh' -- "$@"`
 
 eval set -- "${ARGS}"
 
